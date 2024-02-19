@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #1a1a1a 25%, #1a1a1a 75%, #1a1a1a);
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(-45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%, #292929);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(-45deg, #1e1e1e 25%, transparent 25%, transparent 75%, #1e1e1e 75%, #1e1e1e);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ff4500;
+}
+
+.tagline {
+    color: #ff4500;
+    font-style: italic;
+}
+
+section {
+    margin: 40px 0;
+    background: linear-gradient(-45deg, #333 25%, transparent 25%, transparent 75%, #333 75%, #333);
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #ff4500;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: linear-gradient(-45deg, #1e1e1e 25%, transparent 25%, transparent 75%, #1e1e1e 75%, #1e1e1e);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #ddd;
+}
+
+nav {
+    background: linear-gradient(-45deg, #1e1e1e 25%, transparent 25%, transparent 75%, #1e1e1e 75%, #1e1e1e);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #fa6e3c;
+}
+
+#photos {
+    background: linear-gradient(-45deg, #333 25%, transparent 25%, transparent 75%, #333 75%, #333);
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.photo-grid img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Add a specific style for the active link, including removing the hover effect */
+nav ul li.active a{
+    color: #fa7b4c;
+     
+    text-decoration: none; 
+    cursor: default; 
+}
+
+

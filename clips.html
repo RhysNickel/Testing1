@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Profile Viewer</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Syhr</h1>
+            <p class="tagline">Practice Website I spent hours on</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="clips.html">Clips</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <section id="steamProfile">
+        <div class="container">
+            
+        </div>
+    </section>
+
+
+<script>
+    // Replace 'YOUR_STEAM_API_KEY' with your actual Steam API key
+    const steamApiKey = 'F11A630AFE1F58ADEAC65B3FE380C90';
+    // Replace 'YOUR_STEAM_ID' with your actual Steam ID
+    const steamId = '76561199365727898';
+
+    const steamProfileUrl = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${steamApiKey}&steamids=${steamId}`;
+
+    $(document).ready(function () {
+        // Fetch Steam profile data
+        $.ajax({
+            url: steamProfileUrl,
+            dataType: 'json',
+            success: function (data) {
+                if (data.response.players.length > 0) {
+                    const player = data.response.players[0];
+                    displaySteamProfile(player);
+                } else {
+                    $('#steamProfile').html('<p>Error retrieving Steam profile</p>');
+                }
+            },
+            error: function () {
+                $('#steamProfile').html('<p>Error retrieving Steam profile</p>');
+            }
+        });
+    });
+
+    function displaySteamProfile(player) {
+        const html = `
+            <img src="${player.avatarfull}" alt="Steam Avatar">
+            <p>Steam ID: ${player.steamid}</p>
+            <p>Persona Name: ${player.personaname}</p>
+            <p>Profile URL: <a href="${player.profileurl}" target="_blank">${player.profileurl}</a></p>
+        `;
+        $('#steamProfile').html(html);
+    }
+</script>
+
+</body>
+</html>
